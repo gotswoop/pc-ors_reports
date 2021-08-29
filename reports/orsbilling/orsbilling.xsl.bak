@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:output method="html"/>
+	<xsl:template match ="/">
+		    <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+        <html class="no-js" lang="en" >
+			<head>
+                <meta charset="utf-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+                <link rel="stylesheet" href="css/normalize.css"/>
+                <link rel="stylesheet" href="css/foundation.css"/>
+                <link rel="stylesheet" href="css/app.css"/>
+                <!-- display none on screen, @media screen -->
+				<link rel="stylesheet" href="orslegacy.css" media="screen"/>
+				<!-- <link rel="stylesheet" href="orslegacy.css" media="print"/>-->
+				<title>Billing Reports - Patient Care ORS</title>
+                <script src="js/vendor/modernizr.js">&#160;</script>
+                <script>
+                    function toggleChecked(elem) {
+                        if(!$(elem).parent().parent().hasClass("recordhidden")) {
+                            $(elem).parent().parent().hide();
+                            $(elem).parent().parent().prev().show();
+                            $(elem).attr("checked",false);
+                        }
+                        else {
+                            $(elem).attr("checked",true);
+                            $(elem).parent().parent().hide();
+                            $(elem).parent().parent().next().show();
+                        }
+                    }
+                </script>
+			</head>
+			<body>
+    			<h4>Billing Worklist</h4>
+    			<p>This page shows all bills that have been routed to you (<xsl:value-of select="/records/@username"/>). Click the Edit button next to a record to modify the billing informaton in a new window, then <b>close that window</b> and move down to the next record.</p>
+			    <ul class="tabs" data-tab="">
+			        <li class="tab-title active"><a href="#userpanel">My Worklist</a></li>
+			        <li class="tab-title"><a href="#alluserspanel">All Incomplete Bills</a></li>
+			        <li class="tab-title"><a href="#completepanel">Complete Bills</a></li>
+			    </ul>
+			    <div class="tabs-content">
+			        <div class="content active" id="userpanel">
+    			        <form>
+        				<xsl:apply-templates select="/records/item[routing!='' and routing_username=/records/@username]"/>
+        				</form>
+        				<xsl:if test="not (/records/item[routing!='' and routing_username=/records/@username])">
+        				    No records have been routed to you.
+        				</xsl:if>
+    				</div>
+    				<div class="content" id="alluserspanel">
+                        <form>
+                        <xsl:apply-templates select="/records/item[routing!='' and routing!='BILL COMPLETE']"/>
+                        </form>
+    				</div>
+    				<div class="content" id="completepanel">
+                        <form>
+                        <xsl:apply-templates select="/records/item[routing='BILL COMPLETE']"/>
+                        </form>
+    				</div>
+				</div>
+
+
+                <script src="js/vendor/jquery.js">&#160;</script>
+                <script src="js/foundation.min.js">&#160;</script>
+                <script>
+                    $(document).foundation();
+                </script>
+			</body>
+		</html>
+	</xsl:template>
+
+	<xsl:template match="item" >
+	    <fieldset class="recordhidden">
+	        <legend>Record <xsl:value-of select="registry_id"/></legend>
+	        Work complete. Click to show.
+            <div style="float:right; text-decoration:line-through;">
+                <input type="checkbox" onclick="toggleChecked(this);this.checked='checked';">Done!</input>
+            </div>
+	    </fieldset>
+	    <fieldset class="record">
+	    <legend>Record <xsl:value-of select="registry_id"/></legend>
+	    <table class="record"><tr>
+	    <td style="width: 35%; vertical-align: top;">
+        <span class="dlabel">Surgeon: . . . . . . . .</span><span><xsl:value-of select="billing_surgeon"/></span><br/>
+        <span class="dlabel">Consultaton: . . . . . .</span><span><xsl:value-of select="billing_consult"/></span><br/>
+        <span class="dlabel">IDX / Allscripts ID: . . </span><span><xsl:value-of select="billing_idx_mrn"/></span><br/>
+        <span class="dlabel">Insurance: . . . . . . .</span><span><xsl:value-of select="billing_ins"/></span><br/>
+        </td>
+        <td>
+            <table class="bills">
+                <tr>
+                    <th style="padding-right: 1em;">#</th><th><span class="dlabel">Date of Service</span></th><th><span class="greentext dlabel">Received by Billing</span></th><th><span class="pink dlabel">Completed by CODING</span></th><th><span class="redtext dlabel">Finished by Billing</span></th>
+                </tr>
+                <tr>
+                    <td><span>1</span></td>
+                    <td><span><xsl:value-of select="billing_date"/></span></td>
+                    <td><span><xsl:value-of select="billing_date_rec"/></span></td>
+                    <td><span><xsl:value-of select="billing_date_cod"/></span></td>
+                    <td><span><xsl:value-of select="billing_date_end"/></span></td>
+                </tr>
+            </table>
+            <span class="dlabel">ROUTED TO... </span><span><xsl:value-of select="routing"/></span><br/>
+        </td>
+        </tr></table>
+        <div style="float:right;">
+        <button type="button" onclick="window.open('https:\/\/redcap.uth.tmc.edu\/redcap_v5.9.11\/DataEntry\/index.php?pid=87&amp;id={registry_id}&amp;event_id=699&amp;page=billing');">Edit</button><br/>
+        <input type="checkbox" onclick="toggleChecked(this);">Done!</input>
+        </div>
+        </fieldset>
+	</xsl:template>
+
+	
+</xsl:stylesheet>
+

@@ -1,0 +1,283 @@
+					body {
+						font-size: 10pt;
+						font-family: Calibri, "Courier New", Courier, "Times New Roman", Times, serif;
+					}
+					.dateTitle, .topTitle {
+						font-size: 10pt;
+						font-family: Calibri, "Courier New", Courier, "Times New Roman", Times, serif;
+                        margin-top: 0px;
+					}
+                    .topTitle {
+                        margin: 0px;
+                    }
+					thead {display: table-header-group; left: 0px; }
+					tfoot {display: table-footer-group;}
+					tbody {display: table-row-group;}
+					.roomNum, .detailsRoom {
+						width: 5%;
+					}
+					td.roomNum {
+						text-align: center;
+						font-weight:bold;
+						}
+					.patientName, .detailsPatient {
+						width: 12%;
+						}
+					td.patientName {
+						
+						}
+					.roomName {
+						font-weight: bold;
+						text-decoration: underline;
+					}
+					.admitDate, .doctorName {
+						font-weight: bold;
+					}
+					.detailsLocation {
+						width: 5%;
+						}
+					.diagnosis, .detailsDiagnosis {
+						width: 26%;
+					}
+					td.diagnosis {
+						<!--border-left: 1px dotted grey;-->
+					}
+					.detailsTreatment {
+						width: 20%;
+					}
+					.todo, .detailsTodo {
+						width: 26%;
+					}
+					.detailsConsults {
+						width: 10em;
+					}
+					.detailsPendingOR {
+						text-align: center;
+						font-weight: bold;
+						text-decoration: underline;
+					}
+					
+					.vlist {
+						margin-top:0;
+						
+						word-break: normal; <!-- break-all -->
+						//word-wrap: break-word;
+						white-space: -moz-pre-wrap;
+						white-space: pre-line; <!-- Slight different: http://css-tricks.com/snippets/css/make-pre-text-wrap/ -->
+						
+						font-family: Calibri, "Courier New", Courier, "Times New Roman", Times, serif;
+					}
+
+                    .surgeries {
+                        background: #EFE4B0;
+                        border: 2px solid #BFB490;
+                        //border-bottom-left-radius: 10px;
+                        border-radius: 8px;
+                        padding: 8px;
+                    }
+                    .surgeryText {
+                    }
+
+                    td.roomNum { text-align: center; }
+                    td.patientMrn { text-align: center; }
+                    td.patientName { text-align: center; }
+                    td.patientGender { text-align: center; }
+                    td.patientDays { text-align: center; }
+                    td.surgeonData { text-align: center; }
+                    td.diagnosis { text-align: center; }
+                    .spineDx {
+                        font-size: 125%;
+                    }
+
+
+					td {
+						vertical-align: top;
+                        //border: 1px dotted gray;
+					}
+
+                    tr {
+                    }
+					
+					table.content {
+						border-collapse: collapse;
+						//border: 1px solid purple;
+							<!--left: 0; does nothing-->
+                        width: 99%;
+                        display: block;
+					}
+					table.content tr td, table.content tr th, .contentBlock {
+						<!-- page-break-inside: avoid !important; -->
+					}
+					tr.contentBlock {
+                        border-top: 1px solid #EEEEEE;
+                        //width: 100%;
+					}
+					.grayContentBlock {
+                        border-top: 1px solid #DDDDDD;
+                        background: #DDDDDD;
+					}
+
+
+					table {
+						table-layout: fixed;
+						//border: 1px solid red;
+					}
+					th, td, caption.content {
+							<!-- overflow: hidden; dont do this -->
+						//border: 1px solid blue;
+						padding-top: 0px;
+						font-size: 9pt;
+					}
+					caption.content {
+						background: lightgray;
+                        border-radius: 8px;
+					}
+
+                    td.subtable {
+                       padding-bottom: 0;
+                    }
+
+                    tr.surgeryRow {
+                    }
+                    tr.spacer {
+                        height: 0.5em;
+                    } 
+
+                    // span.theader
+					.hideText {
+						visibility:hidden;
+						color: #00FF00;
+						}
+
+					.columnAlign {
+						visibility:hidden;
+							color: #FF00FF;
+							<!--border-top: 2px dotted pink;-->
+					}
+					
+					.theader {
+						font-weight: bold;
+						font-size: 8pt;
+						background: lightgray;
+					}
+                    .notes {
+                        border: 2px solid black;
+                    }
+
+                    .orthoNotes {
+                        font-size: 8pt;
+                        color: #333333;
+                        font-style: italic;
+                    }
+
+                    .line2, .line3 {
+                        font-weight: bold;
+                        text-align: center;
+                    }
+
+                    .listControl {
+                        font-size: 1.5em;
+                        font-weight: bold;
+                    }
+
+                    .editLink {
+                        //float: left;
+                        position: relative;
+                        left: -50;
+                        top: -30;
+                    }
+
+                    .editLink a {
+                        text-decoration: none;
+                        color: gray;
+                    }
+div.contentBlock tr .listControl {
+    border: 1px solid green;
+}
+table.content div .listControl {
+   visibility: hidden;   
+}  
+
+table.content div:hover .listControl {
+   visibility: visible;
+} 
+
+                    .icon {
+                        width: 10;
+                        height: 10;
+                        border: none;
+                    }
+
+					@media print {
+                        body {
+                            font-size: 8pt;
+                        }
+                        .dateTitle, .topTitle {
+                            font-size: 8pt;
+                        }
+
+                        .listControl {
+                            visibility: hidden;
+                        }
+						thead.magic, tr.magic, caption.content {
+							/*position:fixed;
+							top: 5pt;*/
+							page-break-before: avoid !important;
+							page-break-after: avoid !important;
+							page-break-inside: avoid !important;
+								}
+						tbody {
+							page-break-before: avoid !important;
+						}
+                        th, td, caption.content {
+                            font-size: 8pt;
+                        }
+						tr {
+							page-break-inside: avoid !important;		
+							}
+						.footer {
+									//border: 1px solid grey;
+									position: fixed;
+									bottom: 99%;
+									display: none;
+								}
+						.page-break {
+									display: block;
+									page-break-before:avoid;
+									page-break-after:auto;
+									}
+						.topTitle {
+								position: relative;
+										text-align:center;
+											}
+						tr.trHeader {
+								display:none;
+							<!--text-align:center;-->
+								position:relative;
+								top: 0;
+								left: 50%;
+								right: 50%;
+								}
+
+						}
+					@media screen {	
+                            table {
+                                background: #F9F9FF;
+                            }
+
+                            p.topTitle {
+                                display: none; // already inside a titled container on-screen
+                            }
+
+                            .notes > hr {
+                                border: 0;
+                                height: 1px;
+                                background: #333;
+                                background-image: -webkit-linear-gradient(left, #000, #333, #ccc);
+                                background-image: -moz-linear-gradient(left, #000, #333, #ccc);
+                                background-image: -ms-linear-gradient(left, #000, #333, #ccc);
+                                background-image: -o-linear-gradient(left, #000, #333, #ccc);
+                            }
+
+					}
+

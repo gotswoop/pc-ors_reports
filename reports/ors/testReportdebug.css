@@ -1,0 +1,184 @@
+					body {
+						<!--font-size: 85%;-->
+						font-size: 8pt;
+						font-family: Calibri, "Courier New", Courier, "Times New Roman", Times, serif;
+					}
+					.dateTitle, .topTitle {
+						font-size: 8pt;
+						font-family: Calibri, "Courier New", Courier, "Times New Roman", Times, serif;
+					}
+					thead {display: table-header-group; left: 0px; }
+					tfoot {display: table-footer-group;}
+					tbody {display: table-row-group;}
+					.roomNum, .detailsRoom {
+						width: 8%;
+					}
+					td.roomNum {
+						text-align: center;
+						font-weight:bold;
+						}
+					.patientName, .detailsPatient {
+						width: 12%;
+						}
+					td.patientName {
+						
+						}
+					.roomName {
+						font-weight: bold;
+						text-decoration: underline;
+					}
+					.admitDate, .doctorName {
+						font-weight: bold;
+					}
+					.detailsLocation {
+						width: 6%;
+						}
+					.diagnosis, .detailsDiagnosis {
+						width: 26%;
+					}
+					td.diagnosis {
+						<!--border-left: 1px dotted grey;-->
+					}
+					.detailsTreatment {
+						width: 20%;
+					}
+					.todo, .detailsTodo {
+						width: 26%;
+					}
+					.detailsConsults {
+						width: 10em;
+					}
+					.detailsPendingOR {
+						text-align: center;
+						<!--font-size: 200%;-->
+						font-weight: bold;
+						text-decoration: underline;
+					}
+					
+					.vlist {
+						<!--font-size:110%;-->
+						margin-top:0;
+						
+						word-break: normal; <!-- break-all -->
+						//word-wrap: break-word;
+						white-space: -moz-pre-wrap;
+						white-space: pre-line; <!-- Slight different: http://css-tricks.com/snippets/css/make-pre-text-wrap/ -->
+						
+						font-family: Calibri, "Courier New", Courier, "Times New Roman", Times, serif;
+					}
+
+                    .surgeries {
+                        background: #EFE4B0;
+                    }
+
+					td.or { text-align: center; }
+					td.ortime { text-align: center; }
+					td.orsurgeon { text-align: center; }
+					td.orbed { text-align: center; }
+					td.ormrn { text-align: center; }
+					td.orpatientname {  }
+					td.orprocedure { text-align: center; }
+
+					td {
+						vertical-align: top;
+                        border: 1px dotted gray;
+					}
+					
+					table.content {
+						font-size: 8pt;
+						border-collapse: collapse;
+						border: 1px solid purple;
+							<!--left: 0; does nothing-->
+					}
+					table.content tr td, table.content tr th, .contentBlock {
+						<!-- page-break-inside: avoid !important; -->
+						<!--font-size: 75%;-->
+					}
+					tr.contentBlock {
+						<!--font-size: 85%;-->
+						font-size: 8pt;
+					}
+
+					table {
+						table-layout: fixed;
+						font-size: 8pt;
+						border: 1px solid red;
+					}
+					th, td, caption.content {
+							<!-- overflow: hidden; dont do this -->
+						border: 1px solid blue;
+						padding-top: 0px;
+						font-size: 8pt;
+					}
+					caption.content {
+						background: lightgray;
+					}
+
+					.hideText {
+						visibility:hidden;
+						color: #00FF00;
+						}
+
+					.columnAlign {
+						visibility:hidden;
+							color: #FF00FF;
+							<!--border-top: 2px dotted pink;-->
+					}
+					
+					.theader {
+						font-weight: bold;
+						font-size: 8pt;
+						background: lightgray;
+					}
+                    .notes {
+                        border: 2px solid black;
+                    }
+
+                    .line2, .line3 {
+                        font-weight: bold;
+                        text-align: center;
+                    }
+
+					@media print {
+						thead.magic, tr.magic, caption.content {
+							/*position:fixed;
+							top: 5pt;*/
+							page-break-before: avoid !important;
+							page-break-after: avoid !important;
+							page-break-inside: avoid !important;
+								}
+						tbody {
+							page-break-before: avoid !important;
+						}
+						tr {
+							page-break-inside: avoid !important;		
+							}
+						.footer {
+									border: 1px solid grey;
+									position: fixed;
+									bottom: 99%;
+									display: none;
+								}
+						.page-break {
+									display: block;
+									page-break-before:avoid;
+									page-break-after:auto;
+									}
+						.topTitle {
+								position: relative;
+										text-align:center;
+											}
+						tr.trHeader {
+								display:none;
+							<!--text-align:center;-->
+								position:relative;
+								top: 0;
+								left: 50%;
+								right: 50%;
+								}
+
+						}
+					@media screen {	
+
+					}
+

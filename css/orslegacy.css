@@ -1,0 +1,206 @@
+body, .title {
+	font-size: 12pt;
+	font-family: Calibri, "Courier New", Courier, "Times New Roman", Times, serif;
+}
+body {
+	text-align: center;
+}
+table {
+/*	margin-top: 1em;*/
+	min-width: 25rem;
+	cellpadding: 0;
+	cellspacing: 0;
+}
+/*th, td {
+	padding-right: 1.95rem;
+	padding-top: 0pt;
+	padding-bottom: 0pt;
+}*/
+/* align all tables */
+td.th {
+	font-size: 85%;
+	width: 11.4em;
+	min-width: 11.4em;
+	padding-right: 0;
+}
+
+td {
+	padding-right: 1em;
+	font-size: 85%;
+}
+/*.datatable > tbody > tr > td, .datatable > tr > td {
+	padding-right: 1em;
+	font-size: 85%;
+}*/
+th {
+	text-align: left;
+	font-size: 85%;
+}
+.col2 {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+.col3 {
+	padding-right: 1em;
+}
+.col4 {
+}
+
+@media print {
+	.onscreen {
+		display: none;
+	}
+	body {
+		font-size: 10pt;
+		margin-top: 0;
+	}
+	#ironmanlogo {
+		width: 1.85in;
+		height: 0.75in;
+	}
+	.topTitle {
+		font-size: 12pt;
+		font-family: Calibri, "Courier New", Courier, "Times New Roman", Times, serif;
+		margin-top: 0;
+		font-weight: bold; 
+	}
+
+}
+@media screen {
+	div.container {
+		box-shadow: 5px 5px 20px #888888;
+		border: 1px solid #cccccc;
+		border-radius: 8px 8px 8px 8px;
+		padding: 1em;
+	}
+	body {
+		/*margin-top: 0.25in;
+		margin-bottom: 0.13in;
+		margin-left: 0.5in;
+		margin-right: 0.5in;
+		max-width: 960px;*/
+		min-width: 785px;
+	}
+	.onscreen {
+		display: initial;
+	}
+	#ironmanlogo {
+		width: 2.29in;
+		height: 1.16in;
+		/* width: 2in;
+		height: 1.01in;*/
+	}
+
+	.topTitle {
+		font-size: 14pt;
+		font-family: Calibri, "Courier New", Courier, "Times New Roman", Times, serif;
+		margin-top: 1em;
+		font-weight: bold; 
+	}
+
+}
+
+.info {
+	color: gray;
+	text-decoration: none;
+	border: 1px solid gray;
+	border-radius: 4px 4px 4px 4px;
+	padding: 2px;
+}
+
+.title {
+	text-decoration: underline;
+	font-weight: bold;
+	float: left;
+	white-space: nowrap;
+	text-align: left;
+}
+
+.measure {
+	text-align: right;
+}
+
+.section, .header, .topTitle {
+	margin-bottom: 1em;
+}
+
+/*.title:after , .lineheader:after, .label:after, .label2:after {
+	content: ":";
+}*/
+
+.em {
+	font-weight: bold;
+	font-size: 115%;
+	text-decoration: underline;
+	color: #33bb33;
+}
+.bad {
+	color: red;
+}
+.good {
+	color: #33bb33;
+}
+
+.chartvalue {
+	text-decoration: underline;
+	font-size: 115%;
+}
+.chartlabel {
+	white-space: nowrap;
+}
+
+.label {
+	font-weight: bold;
+	display: inline-block;
+	margin-left: 0px;
+	text-align: left;
+	text-justify: inter-word;
+}
+.label2 {
+	font-weight: bold;
+	display: inline-block;
+	margin-left: 0px;
+	text-align: left;
+	font-size: 115%;
+}
+#y_diff_lbl, #diff_lbl, #symmetry_lbl {
+	font-size: 115%;
+}
+
+.data {
+	font-weight: bold;
+}
+
+.balance {
+	display: flex;
+	justify-content: space-between;
+	display: -webkit-flex;
+	-webkit-justify-content: space-between;*/
+
+	text-justify: inter-word;
+	-ms-flex-pack: space-between;
+	margin-left: 0pt;
+	margin-right: 0pt;
+}
+
+table.balance {
+	width:100%;
+}
+
+
+img {
+	border: none;
+}
+
+img.piechart {
+	border: none;
+	/*width: 180;
+	height: 85;*/
+	margin-right: 0px;
+}
+span.piechart {
+	display: inline-block;
+	font-weight: bold;
+	font-size: 115%;
+}
+

@@ -1,0 +1,55 @@
+img.logo {
+    max-width: none;
+}
+
+h4 {
+    padding-top: 1rem;
+}
+
+div.record {
+    border: 2px solid #DDDDDD;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vertical-text {
+    transform-origin: left bottom 0;
+    transform: translateX(0rem) rotate(90deg);
+    -ms-transform: translateX(0rem) rotate(90deg); /* IE9 */
+    -ms-transform-origin: left bottom 0;
+    /*writing-mode: tb-rl;*/ /* IE8 */
+    writing-mode: vertical-rl; /* IE8 */
+    filter: flipv fliph;
+    
+    display: inline-block;
+    /*float: left;*/
+}
+
+.caption {
+    font-weight: bold;
+}
+
+.fullWidth {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+}
+
+table.record > tbody > tr > th.col1, table.record > tr > th.col1 {
+    width: 40%;
+}
+
+table.vitals {
+    width: 100%;
+    border: 0px;
+} table.vitals th, table.vitals td {
+    padding: 0px;
+    font-weight: normal;
+    font-size: 80%;
+  }
+
+fieldset {
+    padding: 0rem;
+}
