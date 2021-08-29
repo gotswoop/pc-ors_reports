@@ -1,7 +1,6 @@
 <?php
-//require_once "redcap_database.php";
 error_reporting(0);
-require_once "../redcap_connect.php";
+require_once __DIR__ . '/../../../redcap_connect.php';
 $FILTER_FILE = $BINDIR."/reports/".$REPORT."/filter.php";
 $DO_FILTER = file_exists($FILTER_FILE);
 $DUMP_RECORD_LIST = true;
